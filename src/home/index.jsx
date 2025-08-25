@@ -1,5 +1,4 @@
 "use client"
-
 import { useRef, useEffect, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, Text, Box, Sphere, Environment, Float } from "@react-three/drei"
@@ -9,8 +8,6 @@ import Header from "../components/custom/Header"
 import {
   FileText,
   Zap,
-  Users,
-  Award,
   Download,
   Star,
   ArrowRight,
@@ -200,7 +197,7 @@ const Home = () => {
   ]
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 min-h-screen overflow-hidden">
+    <div className="bg-gray-100 min-h-screen">
       <Header />
 
       {/* Hero Section with 3D Elements */}
@@ -301,7 +298,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -415,6 +412,44 @@ const Home = () => {
         </div>
       </section>
 
+      {/* New Features Section */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold mb-4">Why Choose Our Resume Builder?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-2">AI-Powered Assistance</h3>
+            <p className="text-gray-600">
+              Leverage the power of AI to generate compelling content and optimize your resume.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-2">Professionally Designed Templates</h3>
+            <p className="text-gray-600">
+              Choose from a variety of modern and professional templates to make your resume stand out.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-2">Easy to Use Interface</h3>
+            <p className="text-gray-600">
+              Our intuitive interface makes it simple to create, edit, and customize your resume.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* New to Resume Building Section */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold mb-4">New to Resume Building?</h2>
+        <p className="text-gray-700 mb-8">Explore our project options to get a head start.</p>
+        <div className="flex justify-center">
+          <Link to="/dashboard">
+            <Button variant="outline" className="bg-white text-primary hover:bg-gray-200">
+              View Project Options
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -446,116 +481,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mr-3">
-                  <FileText className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-2xl font-bold">TechTrack</span>
-              </div>
-              <p className="text-gray-400 leading-relaxed">
-                The most advanced AI-powered resume builder trusted by professionals worldwide.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Product</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Resume Builder
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Templates
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Cover Letters
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Career Advice
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Company</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Press
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Support</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Cookie Policy
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 mb-4 md:mb-0">&copy; 2025 TechTrack. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Users className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Award className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Star className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <footer className="text-center py-8 text-gray-500">&copy; 2025 Tech Track. All rights reserved.</footer>
     </div>
   )
 }
